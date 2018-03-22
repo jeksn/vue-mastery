@@ -11,12 +11,26 @@ var app = new Vue ({
         variants: [
             {
             variantId: 234,
-            variantColor: "white"
+            variantColor: 'white',
+            variantImage: 'cassette-image.jp2'
         },
         
             {
             variantId: 235,
-            variantColor: "black"
-        }]
+            variantColor: 'black',
+            variantImage: 'cassette-image-black.png'
+        }],
+        cart: 0
+    },
+    methods: {
+        addToCart: function () {
+            this.cart += 1
+        },
+        emptyCart: function() {
+            this.cart = 0
+        },
+        updateProduct: function (variantImage){
+            this.image = variantImage
+        }
     }
 })
